@@ -140,6 +140,7 @@ EXPOSE 7125
 
 USER root
 
+RUN chmod 777 /dev/ttyUSB0
 COPY --chown=${USER}:${USER} --from=builder ${HOME}/klipper/out/klipper.elf /usr/local/bin/klipper_mcu
 COPY --chown=${USER}:${USER} --from=builder ${HOME}/klipper_z_calibration ${HOME}/klipper_z_calibration
 COPY --chown=${USER}:${USER} --from=builder ${HOME}/klipper ${HOME}/klipper
